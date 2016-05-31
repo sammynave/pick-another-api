@@ -35,6 +35,7 @@ defmodule PickAnother.Mixfile do
      {:phoenix_ecto, "~> 2.0"},
      {:gettext, "~> 0.9"},
      {:ja_serializer, "~> 0.9.0"},
+     {:cors_plug, "~> 1.1"},
      {:cowboy, "~> 1.0"}]
   end
 

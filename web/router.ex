@@ -7,5 +7,6 @@ defmodule PickAnother.Router do
 
   scope "/api", PickAnother do
     pipe_through :api
+    resources "/songs", SongController
   end
 end
