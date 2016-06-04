@@ -1,0 +1,10 @@
+_build/
+config/
+deps/
+lib/
+priv/
+test/
+web/
+mix.exs
+mix.lock
+README.md

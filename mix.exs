@@ -18,8 +18,7 @@ defmodule PickAnother.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {PickAnother, []},
-     applications: [:phoenix, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+     applications: [:phoenix, :cowboy, :logger, :gettext, :phoenix_ecto, :postgrex, :cors_plug, :ja_serializer]]
   end
 
   # Specifies which paths to compile per environment.
@@ -36,6 +35,7 @@ defmodule PickAnother.Mixfile do
      {:gettext, "~> 0.9"},
      {:ja_serializer, "~> 0.9.0"},
      {:cors_plug, "~> 1.1"},
+     {:exrm, "~> 1.0"},
      {:cowboy, "~> 1.0"}]
   end
 
