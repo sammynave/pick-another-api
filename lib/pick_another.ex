@@ -18,7 +18,10 @@ defmodule PickAnother do
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: PickAnother.Supervisor]
-    Supervisor.start_link(children, opts)
+    res = Supervisor.start_link(children, opts)
+    IO.puts "######### run migrations..."
+    Ecto.Migrator.run(PickAnother.Repo, Path.join(["#{:code.priv_dir(:pick_another)}", "repo", "migrations"]), :up, all: true)
+    res
   end
 
   # Tell Phoenix to update the endpoint configuration

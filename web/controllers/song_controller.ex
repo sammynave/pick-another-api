@@ -1,15 +1,12 @@
 defmodule PickAnother.SongController do
   use PickAnother.Web, :controller
 
-  require IEx
-
   alias PickAnother.Song
   alias JaSerializer.Params
 
   plug :scrub_params, "data" when action in [:create, :update]
 
   def index(conn, _params) do
-    IEx.pry
     songs = Repo.all(Song)
     render(conn, "index.json", data: songs)
   end
