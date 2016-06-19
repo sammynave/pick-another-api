@@ -1,0 +1,7 @@
+FROM marcelocg/phoenix
+RUN apt-get install -y postgresql-client
+
+COPY . ./
+RUN  mix local.hex --force &&  mix deps.get && mix compile
+
+CMD ["mix", "phoenix.server"]

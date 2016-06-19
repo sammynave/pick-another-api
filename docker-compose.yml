@@ -1,0 +1,21 @@
+app:
+  build: .
+  dockerfile: Dockerfile_local
+  command: sh -c "mix phoenix.server"
+  volumes:
+    - .:/app
+  ports:
+    - "4000:4000"
+    - "35729:35729"
+  links:
+    - db:db
+  environment:
+    DATABASE_URL: ecto://pick_another:pick_another@db/pick_another_dev
+    MIX_ENV: dev
+db:
+  image: postgres:latest
+  environment:
+    POSTGRES_USER: pick_another
+    POSTGRES_PASSWORD: pick_another
+  ports:
+    - 5432
