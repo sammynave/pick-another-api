@@ -7,6 +7,10 @@
   * Start Phoenix endpoint with `mix phoenix.server`
   * Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
+## Local dev with Docker
+  * setup db: `docker-compose run --rm app sh -c "mix ecto.create && mix ecto.migrate"`
+  * `docker-compose up` then hit `http://192.168.99.100:4000/api/songs`
+
 ## Release a new version
 
   1. `mix deps.get`

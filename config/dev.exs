@@ -24,6 +24,5 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :pick_another, PickAnother.Repo,
   adapter: Ecto.Adapters.Postgres,
-  database: "pick_another_dev",
-  hostname: "localhost",
+  url: {:system, "DATABASE_URL"},
   pool_size: 10
